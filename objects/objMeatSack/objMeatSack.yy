@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "bases",
+    "path": "folders/Objects/bases.yy",
   },
   "resourceVersion": "1.0",
   "name": "objMeatSack",

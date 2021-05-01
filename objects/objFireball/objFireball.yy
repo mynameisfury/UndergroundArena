@@ -4,7 +4,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "objMove",
+    "path": "objects/objMove/objMove.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -19,7 +22,15 @@
   "physicsShapePoints": [],
   "eventList": [],
   "properties": [],
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"propertyId":{"name":"startupFrames","path":"objects/objMove/objMove.yy",},"objectId":{"name":"objMove","path":"objects/objMove/objMove.yy",},"value":"0","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"activeFrames","path":"objects/objMove/objMove.yy",},"objectId":{"name":"objMove","path":"objects/objMove/objMove.yy",},"value":"0","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"recoveryFrames","path":"objects/objMove/objMove.yy",},"objectId":{"name":"objMove","path":"objects/objMove/objMove.yy",},"value":"0","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"hitStun","path":"objects/objMove/objMove.yy",},"objectId":{"name":"objMove","path":"objects/objMove/objMove.yy",},"value":"0","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"blockStun","path":"objects/objMove/objMove.yy",},"objectId":{"name":"objMove","path":"objects/objMove/objMove.yy",},"value":"0","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"damage","path":"objects/objMove/objMove.yy",},"objectId":{"name":"objMove","path":"objects/objMove/objMove.yy",},"value":"50","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"isCancelable","path":"objects/objMove/objMove.yy",},"objectId":{"name":"objMove","path":"objects/objMove/objMove.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+  ],
   "parent": {
     "name": "Objects",
     "path": "folders/Objects.yy",
