@@ -226,8 +226,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "p1",
-    "path": "folders/Sprites/Character Sprites/p1.yy",
+    "name": "Sprites",
+    "path": "folders/Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "Sprite1",

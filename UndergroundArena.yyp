@@ -8,9 +8,12 @@
     {"id":{"name":"Sprite4","path":"sprites/Sprite4/Sprite4.yy",},"order":3,},
     {"id":{"name":"objFireball","path":"objects/objFireball/objFireball.yy",},"order":4,},
     {"id":{"name":"Sprite3","path":"sprites/Sprite3/Sprite3.yy",},"order":2,},
+    {"id":{"name":"objBoundary","path":"objects/objBoundary/objBoundary.yy",},"order":2,},
     {"id":{"name":"objHurtbox","path":"objects/objHurtbox/objHurtbox.yy",},"order":6,},
+    {"id":{"name":"spIdle1","path":"sprites/spIdle1/spIdle1.yy",},"order":5,},
     {"id":{"name":"Sprite2","path":"sprites/Sprite2/Sprite2.yy",},"order":1,},
     {"id":{"name":"Object1","path":"objects/Object1/Object1.yy",},"order":0,},
+    {"id":{"name":"spBoundary","path":"sprites/spBoundary/spBoundary.yy",},"order":4,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [

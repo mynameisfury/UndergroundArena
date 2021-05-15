@@ -1,23 +1,26 @@
+//movement
+vsp = vsp + grv;
+
 //horizontal collision
 if (place_meeting(x + hsp,y,objBoundary))
 {
-	while (!place_meeting(x+sign(hsp),y,objWall))
+	while (!place_meeting(x+sign(hsp),y,objBoundary))
 	{
-		x += sign(hsp);
+		x = x + sign(hsp);
 	}
-	hsp = 0;
+	hsp = -hsp;
 }
-  
-x += hsp
+
+x += hsp;
 
 //vertical collision
-if (place_meeting(x, y + vsp,objWall))
+if (place_meeting(x ,y + vsp,objBoundary))
 {
-	while (!place_meeting(x,y+sign(vsp),objWall))
+	while (!place_meeting(x,y+sign(vsp),objBoundary))
 	{
-		y += sign(vsp);
+		y = y + sign(vsp);
 	}
 	vsp = 0;
 }
 
-y += vsp;
+y += vsp
