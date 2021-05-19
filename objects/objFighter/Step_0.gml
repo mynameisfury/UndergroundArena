@@ -3,6 +3,7 @@ keyLeft = keyboard_check(vk_left);
 keyRight = keyboard_check(vk_right);
 keyUp = keyboard_check(vk_up);
 keyDown = keyboard_check(vk_down);
+keyDash = keyboard_check(vk_space)
 }
 else
 {
@@ -23,9 +24,9 @@ if (keyDown){
 	crouched = true;
 }
 if (keyLeft && dashBuffer == 0){
-	dashBuffer = 3;
+	dashBuffer = 8;
 	dashBuffer--;
-	if(dashBuffer > 0 && keyboard_check_pressed(vk_left)){
+	if(dashBuffer > 0 && keyDash){
 		hsp -= 40;
 	}
 	
