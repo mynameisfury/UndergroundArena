@@ -8,7 +8,7 @@ if (place_meeting(x + hsp,y,objBoundary))
 	{
 		x = x + sign(hsp);
 	}
-	hsp = -hsp;
+	hsp = 0;
 }
 
 x += hsp;
