@@ -3,7 +3,7 @@ keyLeft = keyboard_check(vk_left);
 keyRight = keyboard_check(vk_right);
 keyUp = keyboard_check(vk_up);
 keyDown = keyboard_check(vk_down);
-keyDash = keyboard_check(vk_space)
+//keyDash = keyboard_check(vk_space)
 }
 else
 {
@@ -14,27 +14,7 @@ else
 }
 
 
-if (inputBuffer == 0){
-	buttonPressed = false;
-}
-if (keyLeft){
-	lastButtonPressed = keyLeft;
-	buttonPressed = true;
-	if (keyboard_check_released(vk_left)){
-	inputBuffer = 10;
-	inputBuffer--;
-	}
-	buttonPressed = true;
-	inputBuffer = 10;
-	inputBuffer--;
-}
 
-if (keyRight){
-	lastButtonPressed = keyRight;
-	buttonPressed = true;
-	inputBuffer = 10;
-	inputBuffer--;
-}
 
 
 var move = keyRight - keyLeft;
@@ -48,10 +28,25 @@ if (keyDown){
 	crouched = true;
 }
 
-if (buttonPressed && lastButtonPressed == keyLeft){
-	if (keyboard_check_pressed(vk_left)){
-	hsp -= 40;
-	}
+
+
+if(keyboard_check_pressed(vk_left)){
+  if(dash){
+    hsp -= 80;
+  }
+  else{
+    dash = true
+    alarm[0] = 10
+  }
+}
+if(keyboard_check_pressed(vk_right)){
+  if(dash){
+    hsp += 80;
+  }
+  else{
+    dash = true
+    alarm[0] = 10
+  }
 }
 
 if (place_meeting(x,y+1,objBoundary)) and (keyUp)
