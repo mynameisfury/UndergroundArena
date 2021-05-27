@@ -24,3 +24,12 @@ if (place_meeting(x ,y + vsp,objBoundary))
 }
 
 y += vsp
+
+
+if (place_meeting(x,y+1,objBoundary)){
+	onGround = true;
+}
+
+if (!place_meeting(x,y+1,objBoundary)){
+	onGround = false;
+}

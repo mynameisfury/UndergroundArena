@@ -30,7 +30,31 @@ if (keyDown){
 
 
 
-if(keyboard_check_pressed(vk_left)){
+//if(keyboard_check_pressed(vk_left)){
+//  if(dash){
+//    hsp -= 80;
+//  }
+//  else{
+//    dash = true
+//    alarm[0] = 10
+//  }
+//}
+//if(keyboard_check_pressed(vk_right)){
+//  if(dash){
+//    hsp += 80;
+//  }
+//  else{
+//    dash = true
+//    alarm[0] = 10
+//  }
+//}
+
+if (onGround)
+{
+	if (keyUp){
+	vsp = -jumpSpd;
+	}
+	if(keyboard_check_pressed(vk_left)){
   if(dash){
     hsp -= 80;
   }
@@ -48,10 +72,6 @@ if(keyboard_check_pressed(vk_right)){
     alarm[0] = 10
   }
 }
-
-if (place_meeting(x,y+1,objBoundary)) and (keyUp)
-{
-	vsp = -jumpSpd;
 }
 
 //
