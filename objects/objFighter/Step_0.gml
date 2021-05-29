@@ -28,6 +28,13 @@ if (keyDown){
 	crouched = true;
 }
 
+if (!keyDown){
+	crouched = false;
+}
+if (crouched){
+	sprite_index = spCrouch;
+}
+
 
 
 //if(keyboard_check_pressed(vk_left)){

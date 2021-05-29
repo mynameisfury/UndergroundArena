@@ -226,8 +226,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "fighterSprites",
+    "path": "folders/Sprites/fighterSprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "spFanThrow",
