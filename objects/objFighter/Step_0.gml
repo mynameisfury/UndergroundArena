@@ -1,4 +1,4 @@
-if(hasControl){
+ if(hasControl){
 keyLeft = keyboard_check(vk_left);
 keyRight = keyboard_check(vk_right);
 keyUp = keyboard_check(vk_up);
@@ -33,28 +33,14 @@ if (!keyDown){
 }
 if (crouched){
 	sprite_index = spCrouch;
+	hsp = 0;
+	//objFighter.y = 0;
+
+}
+if (!crouched){
+	sprite_index = spIdle1;
 }
 
-
-
-//if(keyboard_check_pressed(vk_left)){
-//  if(dash){
-//    hsp -= 80;
-//  }
-//  else{
-//    dash = true
-//    alarm[0] = 10
-//  }
-//}
-//if(keyboard_check_pressed(vk_right)){
-//  if(dash){
-//    hsp += 80;
-//  }
-//  else{
-//    dash = true
-//    alarm[0] = 10
-//  }
-//}
 
 if (onGround)
 {
@@ -63,7 +49,7 @@ if (onGround)
 	}
 	if(keyboard_check_pressed(vk_left)){
   if(dash){
-    hsp -= 80;
+    hsp -= dashDistance;
   }
   else{
     dash = true
@@ -71,14 +57,14 @@ if (onGround)
   }
 }
 if(keyboard_check_pressed(vk_right)){
-  if(dash){
-    hsp += 80;
-  }
-  else{
-    dash = true
-    alarm[0] = 10
-  }
-}
+	  if(dash){
+	    hsp += dashDistance;
+	  }
+	  else{
+	    dash = true
+	    alarm[0] = 10
+	  }
+	}
 }
 
 //
