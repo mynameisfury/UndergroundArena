@@ -3,10 +3,10 @@ keyLeft = keyboard_check(vk_left);
 keyRight = keyboard_check(vk_right);
 keyUp = keyboard_check(vk_up);
 keyDown = keyboard_check(vk_down);
-downForward = keyboard_check(vk_down) && keyboard_check(vk_right);
-upForward = keyboard_check_pressed(vk_up) && keyboard_check(vk_right);
-downBack = keyboard_check(vk_down) && keyboard_check(vk_left);
-upBack = keyboard_check_pressed(vk_up) && keyboard_check(vk_left);
+//downForward = keyboard_check(vk_down) && keyboard_check(vk_right);
+upRight = keyboard_check_pressed(vk_up) && keyboard_check(vk_right);
+//downBack = keyboard_check(vk_down) && keyboard_check(vk_left);
+upLeft = keyboard_check_pressed(vk_up) && keyboard_check(vk_left);
 
 
 
@@ -26,15 +26,12 @@ else
 
 
 var move = keyRight - keyLeft;
-hsp = move * walksp;
-vsp = vsp + grv;
+
+//vsp = vsp + grv;
 
 //timer for input buffers. timer could count up and if the same button is pressed within that time then it comes out as a dash?
 
 
-if (keyDown){
-	crouched = true;
-}
 
 if (!keyDown){
 	crouched = false;
@@ -52,13 +49,31 @@ if (!crouched){
 
 if (onGround)
 {
-	if (upForward){
+	//if (upForward){
+	//	vsp = -jumpSpd;
+	//	while(!onGround){
+	//		move = 1
+	//	}
+	//}
+	hsp = move * walksp;
+	if (keyDown){
+	crouched = true;
+	move = 0;
+	}
+
+	if (upRight){
 		vsp = -jumpSpd;
 		while(!onGround){
-			move = 1
+			move = -1;		
 		}
 	}
-	if (keyUp){
+	if (upLeft){
+		vsp = -jumpSpd;
+		while(!onGround){
+			move = -1;		
+		}
+	}
+	else if (keyUp){
 	vsp = -jumpSpd;
 	}
 	if(keyboard_check_pressed(vk_left)){
@@ -72,6 +87,10 @@ if (onGround)
 }
 if(keyboard_check_pressed(vk_right)){
 	  if(ableToDash){
+		  //for (i = 0; i < dashSpeed; i++){
+			  
+			//  move *= dashDistance;
+		  //}
 	    hsp += dashDistance;
 	  }
 	  else{
