@@ -3,6 +3,14 @@ keyLeft = keyboard_check(vk_left);
 keyRight = keyboard_check(vk_right);
 keyUp = keyboard_check(vk_up);
 keyDown = keyboard_check(vk_down);
+downForward = keyboard_check(vk_down) && keyboard_check(vk_right);
+upForward = keyboard_check_pressed(vk_up) && keyboard_check(vk_right);
+downBack = keyboard_check(vk_down) && keyboard_check(vk_left);
+upBack = keyboard_check_pressed(vk_up) && keyboard_check(vk_left);
+
+
+
+
 //keyDash = keyboard_check(vk_space)
 }
 else
@@ -44,24 +52,30 @@ if (!crouched){
 
 if (onGround)
 {
+	if (upForward){
+		vsp = -jumpSpd;
+		while(!onGround){
+			move = 1
+		}
+	}
 	if (keyUp){
 	vsp = -jumpSpd;
 	}
 	if(keyboard_check_pressed(vk_left)){
-  if(dash){
+  if(ableToDash){
     hsp -= dashDistance;
   }
   else{
-    dash = true
+    ableToDash = true
     alarm[0] = 10
   }
 }
 if(keyboard_check_pressed(vk_right)){
-	  if(dash){
+	  if(ableToDash){
 	    hsp += dashDistance;
 	  }
 	  else{
-	    dash = true
+	    ableToDash = true
 	    alarm[0] = 10
 	  }
 	}
