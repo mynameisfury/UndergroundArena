@@ -7,7 +7,8 @@ keyDown = keyboard_check(vk_down);
 upRight = keyboard_check_pressed(vk_up) && keyboard_check(vk_right);
 //downBack = keyboard_check(vk_down) && keyboard_check(vk_left);
 upLeft = keyboard_check_pressed(vk_up) && keyboard_check(vk_left);
-
+keyLightPunch = keyboard_check_pressed(vk_lshift);
+keyMediumPunch = keyboard_check_pressed(vk_space);
 
 
 
@@ -18,7 +19,7 @@ else
 	keyUp = 0;
 	keyRight = 0;
 	keyLeft = 0;
-	keyDown = 0
+	keyDown = 0;
 }
 
 
@@ -44,17 +45,13 @@ if (crouched){
 }
 if (!crouched){
 	sprite_index = spIdle1;
+	
+
 }
 
-
+//grounded actions
 if (onGround)
 {
-	//if (upForward){
-	//	vsp = -jumpSpd;
-	//	while(!onGround){
-	//		move = 1
-	//	}
-	//}
 	hsp = move * walksp;
 	if (keyDown){
 	crouched = true;
@@ -84,6 +81,26 @@ if (onGround)
     ableToDash = true
     alarm[0] = 10
   }
+  
+  	if(keyMediumPunch){
+		for (i=0; i < spFanThrow.image_number; i++){
+		sprite_index = spFanThrow;  
+		}
+		  
+	}
+  
+  //if (keyLightPunch){
+	//  sprite_index = spLightPunch;
+	//  var hitbox = new objHitbox();
+	//  with (hitbox){
+	//	  sprite_index = spLightPunchHitbox;
+	//  }
+	//  instance_create_layer(x,y, "Hitboxes", hitbox); 
+  //}
+  
+  
+  
+  
 }
 if(keyboard_check_pressed(vk_right)){
 	  if(ableToDash){

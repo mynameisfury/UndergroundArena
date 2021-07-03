@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spBoundary",
+    "path": "sprites/spBoundary/spBoundary.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
