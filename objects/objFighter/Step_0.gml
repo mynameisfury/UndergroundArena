@@ -82,25 +82,40 @@ if (onGround)
     alarm[0] = 10
   }
   
-  	if(keyMediumPunch){
-		for (i=0; i < spFanThrow.image_number; i++){
-		sprite_index = spFanThrow;  
+  	if(keyboard_check_pressed(vk_space)){
+		var fanThrow = new objMove(){
+		characterSprite = spBoundary;	
 		}
+		actingMove = fanThrow;
+		inMove = true;
+		
 		  
 	}
   
-  //if (keyLightPunch){
-	//  sprite_index = spLightPunch;
-	//  var hitbox = new objHitbox();
-	//  with (hitbox){
-	//	  sprite_index = spLightPunchHitbox;
-	//  }
-	//  instance_create_layer(x,y, "Hitboxes", hitbox); 
-  //}
+  if (keyboard_check_pressed(vk_space)){
+	  sprite_index = spLightPunch;
+	  var hitbox = new objHitbox();
+	  with (hitbox){
+		  sprite_index = spLightPunchHitbox;
+	  }
+	  instance_create_layer(x,y, "Hitboxes", hitbox); 
+  }
   
   
   
   
+}
+
+if(inMove){
+	sprite_index = actingMove.characterSprite;
+	for (i=0; i < actingMove.characterSprite.image_number; i++){
+		hasControl = false;
+		}
+	 var hitbox = new objHitbox();
+	  with (hitbox){
+		  sprite_index = spLightPunchHitbox;
+	  }
+	  instance_create_layer(x,y, "Hitboxes", hitbox); 
 }
 if(keyboard_check_pressed(vk_right)){
 	  if(ableToDash){
