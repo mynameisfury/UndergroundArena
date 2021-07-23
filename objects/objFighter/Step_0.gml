@@ -22,17 +22,33 @@ else
 	keyDown = 0;
 }
 
+enum PLAYERSTATE{
+	Neutral, 
+	Hitstun,
+	Blockstun,
+	Attacking,
+	Blocking,
+	InAir,
+	Invincible,
+	Armored,
+	Dashing
+}
+state = PLAYERSTATE.Neutral;
 
+switch (state){
+	case PLAYERSTATE.Neutral: PlayerStateNeutral(); break;
+	case PLAYERSTATE.Hitstun: PlayerStateHitstun(); break;
+	case PLAYERSTATE.Blockstun: PlayerStateBlockstun(); break;
+	case PLAYERSTATE.Attacking: PlayerStateAttacking(); break;
+	case PLAYERSTATE.Blocking: PlayerStateBlocking(); break;
+	case PLAYERSTATE.InAir: PlayerStateInAir(); break;
+	case PLAYERSTATE.Invincible: PlayerStateInvincible(); break;
+	case PLAYERSTATE.Armored: PlayerStateArmored(); break;
+	case PLAYERSTATE.Dashing: PlayerStateDash(); break;
 
+}
 
-
-var move = keyRight - keyLeft;
-
-//vsp = vsp + grv;
-
-//timer for input buffers. timer could count up and if the same button is pressed within that time then it comes out as a dash?
-
-
+//var move = keyRight - keyLeft;
 
 if (!keyDown){
 	crouched = false;
@@ -50,87 +66,84 @@ if (!crouched){
 }
 
 //grounded actions
-if (onGround)
-{
-	hsp = move * walksp;
-	if (keyDown){
-	crouched = true;
-	move = 0;
-	}
+//if (onGround)
+//{
+//	hsp = move * walksp;
+//	if (keyDown){
+//	crouched = true;
+//	move = 0;
+//	}
 
-	if (upRight){
-		vsp = -jumpSpd;
-		while(!onGround){
-			move = -1;		
-		}
-	}
-	if (upLeft){
-		vsp = -jumpSpd;
-		while(!onGround){
-			move = -1;		
-		}
-	}
-	else if (keyUp){
-	vsp = -jumpSpd;
-	}
-	if(keyboard_check_pressed(vk_left)){
-  if(ableToDash){
-    hsp -= dashDistance;
-  }
-  else{
-    ableToDash = true
-    alarm[0] = 10
-  }
+//	if (upRight){
+//		vsp = -jumpSpd;
+//		while(!onGround){
+//			move = -1;		
+//		}
+//	}
+//	if (upLeft){
+//		vsp = -jumpSpd;
+//		while(!onGround){
+//			move = -1;		
+//		}
+//	}
+//	else if (keyUp){
+//	vsp = -jumpSpd;
+//	}
+//	if(keyboard_check_pressed(vk_left)){
+//  if(ableToDash){
+//    hsp -= dashDistance;
+//  }
+//  else{
+//    ableToDash = true
+//    alarm[0] = 10
+//  }
   
-  	if(keyboard_check_pressed(vk_space)){
-		var fanThrow = new objMove(){
-		characterSprite = spBoundary;	
-		}
-		actingMove = fanThrow;
-		inMove = true;
+//  	if(keyboard_check_pressed(vk_space)){
+//		var fanThrow = new objMove(){
+//		characterSprite = spBoundary;	
+//		}
+//		actingMove = fanThrow;
+//		inMove = true;
 		
 		  
-	}
+//	}
   
-  if (keyboard_check_pressed(vk_space)){
-	  sprite_index = spLightPunch;
-	  var hitbox = new objHitbox();
-	  with (hitbox){
-		  sprite_index = spLightPunchHitbox;
-	  }
-	  instance_create_layer(x,y, "Hitboxes", hitbox); 
-  }
-  
-  
+//  if (keyboard_check_pressed(vk_space)){
+//	  sprite_index = spLightPunch;
+//	  var hitbox = new objHitbox();
+//	  with (hitbox){
+//		  sprite_index = spLightPunchHitbox;
+//	  }
+//	  instance_create_layer(x,y, "Hitboxes", hitbox); 
+//  }
   
   
-}
+  
+  
+//}
 
-if(inMove){
-	sprite_index = actingMove.characterSprite;
-	for (i=0; i < actingMove.characterSprite.image_number; i++){
-		hasControl = false;
-		}
-	 var hitbox = new objHitbox();
-	  with (hitbox){
-		  sprite_index = spLightPunchHitbox;
-	  }
-	  instance_create_layer(x,y, "Hitboxes", hitbox); 
-}
-if(keyboard_check_pressed(vk_right)){
-	  if(ableToDash){
-		  //for (i = 0; i < dashSpeed; i++){
-			  
-			//  move *= dashDistance;
-		  //}
-	    hsp += dashDistance;
-	  }
-	  else{
-	    ableToDash = true
-	    alarm[0] = 10
-	  }
-	}
-}
+//if(inMove){
+//	sprite_index = actingMove.characterSprite;
+//	for (i=0; i < actingMove.characterSprite.image_number; i++){
+//		hasControl = false;
+//		}
+//	 var hitbox = new objHitbox();
+//	  with (hitbox){
+//		  sprite_index = spLightPunchHitbox;
+//	  }
+//	  instance_create_layer(x,y, "Hitboxes", hitbox); 
+//}
+//if(keyboard_check_pressed(vk_right)){
+//	  if(ableToDash){
+		 
+//	    hsp += dashDistance;
+//	  }
+//	  else{
+//	    ableToDash = true
+//	    alarm[0] = 10
+//	  }
+	
+//}
 
 //
 
