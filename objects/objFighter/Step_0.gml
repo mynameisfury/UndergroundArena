@@ -50,54 +50,8 @@ switch (state){
 
 //var move = keyRight - keyLeft;
 
-if (!keyDown){
-	crouched = false;
-}
-if (crouched){
-	sprite_index = spCrouch;
-	hsp = 0;
-	//objFighter.y = 0;
 
-}
-if (!crouched){
-	sprite_index = spIdle1;
-	
 
-}
-
-//grounded actions
-//if (onGround)
-//{
-//	hsp = move * walksp;
-//	if (keyDown){
-//	crouched = true;
-//	move = 0;
-//	}
-
-//	if (upRight){
-//		vsp = -jumpSpd;
-//		while(!onGround){
-//			move = -1;		
-//		}
-//	}
-//	if (upLeft){
-//		vsp = -jumpSpd;
-//		while(!onGround){
-//			move = -1;		
-//		}
-//	}
-//	else if (keyUp){
-//	vsp = -jumpSpd;
-//	}
-//	if(keyboard_check_pressed(vk_left)){
-//  if(ableToDash){
-//    hsp -= dashDistance;
-//  }
-//  else{
-//    ableToDash = true
-//    alarm[0] = 10
-//  }
-  
 //  	if(keyboard_check_pressed(vk_space)){
 //		var fanThrow = new objMove(){
 //		characterSprite = spBoundary;	
@@ -119,8 +73,7 @@ if (!crouched){
   
   
   
-  
-//}
+ 
 
 //if(inMove){
 //	sprite_index = actingMove.characterSprite;
@@ -133,19 +86,7 @@ if (!crouched){
 //	  }
 //	  instance_create_layer(x,y, "Hitboxes", hitbox); 
 //}
-//if(keyboard_check_pressed(vk_right)){
-//	  if(ableToDash){
-		 
-//	    hsp += dashDistance;
-//	  }
-//	  else{
-//	    ableToDash = true
-//	    alarm[0] = 10
-//	  }
-	
-//}
 
-//
 
 
 // Inherit the parent event

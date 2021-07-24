@@ -9,6 +9,20 @@ function PlayerStateNeutral(){
 	var move = keyRight - keyLeft;
 	if (onGround)
 	{
+		
+	if (!keyDown){
+	crouched = false;
+}
+if (crouched){
+	sprite_index = spCrouch;
+	hsp = 0;
+	//objFighter.y = 0;
+
+}
+if (!crouched){
+	sprite_index = spIdle1;
+}
+	
 	hsp = move * walksp;
 	if (keyDown){
 		crouched = true;
@@ -65,8 +79,13 @@ function PlayerStateHitstun(){
 function PlayerStateBlockstun(){
 
 }
-function PlayerStateAttacking(){
-
+function PlayerStateAttacking(objMove){
+ sprite_index = objMove.characterSprite;
+	  var hitbox = new objHitbox();
+	  with (hitbox){
+		  sprite_index = objMove.hitboxSprite;
+	  }
+	  instance_create_layer(x,y, "Hitboxes", hitbox); 
 }
 function PlayerStateBlocking(){
 
