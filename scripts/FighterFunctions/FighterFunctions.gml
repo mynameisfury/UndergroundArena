@@ -79,11 +79,15 @@ function PlayerStateHitstun(){
 function PlayerStateBlockstun(){
 
 }
-function PlayerStateAttacking(objMove){
- sprite_index = objMove.characterSprite;
+
+/// @function                 PlayerStateAttacking(attack);
+/// @param {objMove}  attack  The attack to be done
+/// @description              Dictates player behavior during the attacking state
+function PlayerStateAttacking(attack){
+ sprite_index = attack.characterSprite;
 	  var hitbox = new objHitbox();
 	  with (hitbox){
-		  sprite_index = objMove.hitboxSprite;
+		  sprite_index = attack.hitboxSprite;
 	  }
 	  instance_create_layer(x,y, "Hitboxes", hitbox); 
 }

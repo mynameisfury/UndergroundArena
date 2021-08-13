@@ -62,14 +62,9 @@ switch (state){
 		  
 //	}
   
-//  if (keyboard_check_pressed(vk_space)){
-//	  sprite_index = spLightPunch;
-//	  var hitbox = new objHitbox();
-//	  with (hitbox){
-//		  sprite_index = spLightPunchHitbox;
-//	  }
-//	  instance_create_layer(x,y, "Hitboxes", hitbox); 
-//  }
+  if (keyMediumPunch){
+	PlayerStateAttacking()
+  }
   
   
   
