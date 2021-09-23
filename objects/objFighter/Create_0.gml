@@ -1,1 +1,0 @@
-lastButtonPressed = pointer_null;

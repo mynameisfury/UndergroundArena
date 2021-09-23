@@ -39,7 +39,6 @@ switch (state){
 	case PLAYERSTATE.Neutral: PlayerStateNeutral(); break;
 	case PLAYERSTATE.Hitstun: PlayerStateHitstun(); break;
 	case PLAYERSTATE.Blockstun: PlayerStateBlockstun(); break;
-	case PLAYERSTATE.Attacking: PlayerStateAttacking(); break;
 	case PLAYERSTATE.Blocking: PlayerStateBlocking(); break;
 	case PLAYERSTATE.InAir: PlayerStateInAir(); break;
 	case PLAYERSTATE.Invincible: PlayerStateInvincible(); break;
@@ -72,6 +71,7 @@ switch (state){
 		  blockStun = 3
 		  damage = 60;
 		  isCancelable = true;
+		  hitboxSprite = spLightPunchHitbox
 		  characterSprite = spLightPunch;		  
 	  }
 	   
