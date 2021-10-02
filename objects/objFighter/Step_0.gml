@@ -62,19 +62,8 @@ switch (state){
 //	}
   //moves should inherit their fields from the objMove model and be constructed in the character code and 
   //then injected into the PlayerStateAttacking function eg: move mediumPunch = new objMove {fields}
-  if (keyMediumPunch){
-	  var mediumHit = new objMove{
-		  startupFrames = 6
-		  activeFrames = 2
-		  recoveryFrames = 3
-		  hitStun = 8
-		  blockStun = 3
-		  damage = 60;
-		  isCancelable = true;
-		  hitboxSprite = spLightPunchHitbox
-		  characterSprite = spLightPunch;		  
-	  }
-	   
+  if (keyMediumPunch){	  
+	  var test = mediumHit.characterSprite;
 	PlayerStateAttacking(mediumHit)
   }
   

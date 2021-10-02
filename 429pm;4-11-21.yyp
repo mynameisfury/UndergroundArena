@@ -4,6 +4,7 @@
     {"id":{"name":"objMove","path":"objects/objMove/objMove.yy",},"order":1,},
     {"id":{"name":"objMeatSack","path":"objects/objMeatSack/objMeatSack.yy",},"order":0,},
     {"id":{"name":"objFighter","path":"objects/objFighter/objFighter.yy",},"order":2,},
+    {"id":{"name":"MoveFunctions","path":"scripts/MoveFunctions/MoveFunctions.yy",},"order":1,},
     {"id":{"name":"spFanThrow","path":"sprites/spFanThrow/spFanThrow.yy",},"order":0,},
     {"id":{"name":"Sprite4","path":"sprites/Sprite4/Sprite4.yy",},"order":3,},
     {"id":{"name":"FighterFunctions","path":"scripts/FighterFunctions/FighterFunctions.yy",},"order":0,},

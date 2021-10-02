@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spBoundary",
-    "path": "sprites/spBoundary/spBoundary.yy",
+    "name": "spLightPunchHitbox",
+    "path": "sprites/spLightPunchHitbox/spLightPunchHitbox.yy",
   },
   "solid": false,
   "visible": true,
@@ -20,7 +20,9 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"objFighter","path":"objects/objFighter/objFighter.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {

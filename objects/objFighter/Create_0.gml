@@ -1,0 +1,1 @@
+mediumHit = new objMove(6,2,3,8,3,60,true,spLightPunchHitbox,spLightPunch)
