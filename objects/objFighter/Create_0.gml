@@ -12,4 +12,4 @@ enum PLAYERSTATE{
 state = PLAYERSTATE.Neutral;
 
 
-mediumHit = new objMove(6,2,3,8,3,60,true,spLightPunchHitbox,spLightPunch)
+mediumHit = new objMove(6,2,3,8,3,60,true,spLightPunchHitbox,spFanThrow)

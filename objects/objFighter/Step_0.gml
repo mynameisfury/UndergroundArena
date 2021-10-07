@@ -9,7 +9,6 @@ if(hasControl){
 	upLeft = keyboard_check_pressed(vk_up) && keyboard_check(vk_left);
 	keyLightPunch = keyboard_check_pressed(vk_lshift);
 	keyMediumPunch = keyboard_check_pressed(vk_space);
-
 //keyDash = keyboard_check(vk_space)
 }
 else
@@ -20,8 +19,6 @@ else
 	keyDown = 0;
 }
 
-
-
 switch (state){
 	case PLAYERSTATE.Neutral: PlayerStateNeutral(); break;
 	case PLAYERSTATE.Hitstun: PlayerStateHitstun(); break;
@@ -31,21 +28,16 @@ switch (state){
 	case PLAYERSTATE.Invincible: PlayerStateInvincible(); break;
 	case PLAYERSTATE.Armored: PlayerStateArmored(); break;
 	case PLAYERSTATE.Dashing: PlayerStateDash(); break;
-
 }
 
+
 //var move = keyRight - keyLeft;
-
-
-
 //  	if(keyboard_check_pressed(vk_space)){
 //		var fanThrow = new objMove(){
 //		characterSprite = spBoundary;	
 //		}
 //		actingMove = fanThrow;
 //		inMove = true;
-		
-		  
 //	}
   //moves should inherit their fields from the objMove model and be constructed in the character code and 
   //then injected into the PlayerStateAttacking function eg: move mediumPunch = new objMove {fields}
@@ -53,8 +45,6 @@ switch (state){
 	  //var test = mediumHit.characterSprite;
 	PlayerStateAttacking(mediumHit)
   }
-  
-  
   
  
 

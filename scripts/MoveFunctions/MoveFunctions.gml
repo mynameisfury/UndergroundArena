@@ -17,7 +17,7 @@ function objMove(startupFrames,activeFrames,recoveryFrames,hitStun,blockStun,dam
 	
 	ThrowMove = function(x,y){
 		var hitBox = instance_create_layer(x,y, "Hitboxes", objHitbox);
-		hitBox.sprite_index = hitboxSprite;
+		//hitBox.sprite_index = hitboxSprite;
 		//with(objFighter){
 		//	objFighter.sprite_index = characterSprite;
 		//}

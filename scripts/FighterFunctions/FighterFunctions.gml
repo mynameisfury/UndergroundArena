@@ -6,23 +6,19 @@ function FighterFunctions(){
 
 function PlayerStateNeutral(){
 //grounded actions
-	var move = keyRight - keyLeft;
-	if (onGround)
-	{
-		
+var move = keyRight - keyLeft;
+if (onGround){		
 	if (!keyDown){
-	crouched = false;
-}
-if (crouched){
-	sprite_index = spCrouch;
-	hsp = 0;
-	//objFighter.y = 0;
-
-}
-//if (!crouched){
-//	sprite_index = spIdle1;
-//}
-	
+		crouched = false;
+	}
+	if (crouched){
+		sprite_index = spCrouch;
+		hsp = 0;
+		//objFighter.y = 0;
+	}
+	//if (hsp == 0){
+	//	sprite_index = spIdle1;
+	//}
 	hsp = move * walksp;
 	if (keyDown){
 		crouched = true;
@@ -40,16 +36,15 @@ if (crouched){
 		while(!onGround){
 				move = -1;		
 			}
-		}
+	}
 	else if (keyUp){
 		vsp = -jumpSpd;
 		}
 		
-		if(keyboard_check_pressed(vk_right)){
-	  if(ableToDash){
-		 
-	    hsp += dashDistance;
-	  }
+	if(keyboard_check_pressed(vk_right)){
+		if(ableToDash){
+			PlayerStateDash(true);
+		}
 	  else{
 	    ableToDash = true
 	    alarm[0] = 10
@@ -58,19 +53,31 @@ if (crouched){
 	}
 	if(keyboard_check_pressed(vk_left)){
 		if(ableToDash){
-		hsp -= dashDistance;
+			PlayerStateDash(false);
 		}
 		else{
-		ableToDash = true
-		alarm[0] = 10
+			ableToDash = true
+			alarm[0] = 10
 		}
  
   
 		}
 	}
 }
-function PlayerStateDash(){
-	hsp -= dashDistance;
+function PlayerStateDash(right){
+	state = PLAYERSTATE.Dashing;
+	if(right){
+		for(var i = 0; i < dashSpeed; i++){
+			hsp += dashDistance/dashSpeed;			
+		}
+		state = PLAYERSTATE.Neutral;
+	}
+	else{
+		for(var i = 0; i < dashSpeed; i++){
+			hsp -= dashDistance/dashSpeed;			
+		}
+		state = PLAYERSTATE.Neutral;
+	}
 }
 
 function PlayerStateHitstun(){
@@ -84,9 +91,18 @@ function PlayerStateBlockstun(){
 /// @param {objMove}  attack  The attack to be done
 /// @description              Dictates player behavior during the attacking state
 function PlayerStateAttacking(attack){
-	sprite_index = attack.characterSprite;
+	state = PLAYERSTATE.Attacking;
 	attack.ThrowMove(x,y);
- 
+	var lockedFrames = attack.activeFrames + attack.startupFrames + attack.recoveryFrames;
+	while (state = PLAYERSTATE.Attacking){
+		lockedFrames--;
+		sprite_index = attack.characterSprite;	
+		if(lockedFrames <= 0){
+			state = PLAYERSTATE.Neutral;
+			sprite_index = spIdle1;
+		}
+	}
+	
 	//var hitbox = new objHitbox(attack.hitboxSprite);
 	//instance_create_layer(x,y, "Hitboxes", hitbox); 
 	
