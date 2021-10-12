@@ -11,12 +11,8 @@ if (onGround){
 	if (!keyDown){
 		crouched = false;
 	}
-	if (crouched){
-		sprite_index = spCrouch;
-		hsp = 0;
-		//objFighter.y = 0;
-	}
-	//if (hsp == 0){
+	
+	//if (!crouched){
 	//	sprite_index = spIdle1;
 	//}
 	hsp = move * walksp;
@@ -93,15 +89,7 @@ function PlayerStateBlockstun(){
 function PlayerStateAttacking(attack){
 	state = PLAYERSTATE.Attacking;
 	attack.ThrowMove(x,y);
-	var lockedFrames = attack.activeFrames + attack.startupFrames + attack.recoveryFrames;
-	while (state = PLAYERSTATE.Attacking){
-		lockedFrames--;
-		sprite_index = attack.characterSprite;	
-		if(lockedFrames <= 0){
-			state = PLAYERSTATE.Neutral;
-			sprite_index = spIdle1;
-		}
-	}
+	
 	
 	//var hitbox = new objHitbox(attack.hitboxSprite);
 	//instance_create_layer(x,y, "Hitboxes", hitbox); 

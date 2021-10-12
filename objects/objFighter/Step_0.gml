@@ -18,9 +18,26 @@ else
 	keyLeft = 0;
 	keyDown = 0;
 }
-
+var inMove;
 switch (state){
-	case PLAYERSTATE.Neutral: PlayerStateNeutral(); break;
+	case PLAYERSTATE.Neutral: 
+		PlayerStateNeutral(); 
+		if(hsp == 0){
+			sprite_index = spIdle1;	
+		}
+		if(hsp != 0){
+			sprite_index = spLightPunch;
+			
+		}
+		if (crouched){
+		sprite_index = spCrouch;
+		hsp = 0;
+		//objFighter.y = 0;
+	}
+		
+	
+	break;
+	
 	case PLAYERSTATE.Hitstun: PlayerStateHitstun(); break;
 	case PLAYERSTATE.Blockstun: PlayerStateBlockstun(); break;
 	case PLAYERSTATE.Blocking: PlayerStateBlocking(); break;
@@ -43,7 +60,17 @@ switch (state){
   //then injected into the PlayerStateAttacking function eg: move mediumPunch = new objMove {fields}
   if (keyMediumPunch){	  
 	  //var test = mediumHit.characterSprite;
-	PlayerStateAttacking(mediumHit)
+	  state = PLAYERSTATE.Attacking;
+	var lockedFrames = mediumHit.activeFrames + mediumHit.startupFrames + mediumHit.recoveryFrames;
+	PlayerStateAttacking(mediumHit);
+	if (state = PLAYERSTATE.Attacking){
+		lockedFrames--;
+		sprite_index = spFanThrow;	
+		if(lockedFrames <= 0){
+			state = PLAYERSTATE.Neutral;
+			sprite_index = spIdle1;
+		}
+	}
   }
   
  
