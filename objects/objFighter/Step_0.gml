@@ -18,25 +18,34 @@ else
 	keyLeft = 0;
 	keyDown = 0;
 }
-var inMove;
+//var activeMove;
+//var totalFrames = activeMove.startupFrames + activeMove.activeFrames + activeMove.recoveryFrames;
 switch (state){
 	case PLAYERSTATE.Neutral: 
 		PlayerStateNeutral(); 
+		if(hsp !=0) image_xscale = sign(hsp);
 		if(hsp == 0){
 			sprite_index = spIdle1;	
 		}
 		if(hsp != 0){
-			sprite_index = spLightPunch;
-			
+			sprite_index = spLightPunch;				
 		}
 		if (crouched){
 		sprite_index = spCrouch;
 		hsp = 0;
-		//objFighter.y = 0;
-	}
-		
-	
+	}	
 	break;
+	
+	case PLAYERSTATE.Attacking:		
+		var remainingFrames = activeMove.startupFrames + activeMove.activeFrames + activeMove.recoveryFrames
+		
+		sprite_index = activeMove.characterSprite;
+			
+		alarm[1] = remainingFrames;
+			
+			
+	break;
+	
 	
 	case PLAYERSTATE.Hitstun: PlayerStateHitstun(); break;
 	case PLAYERSTATE.Blockstun: PlayerStateBlockstun(); break;
@@ -44,7 +53,7 @@ switch (state){
 	case PLAYERSTATE.InAir: PlayerStateInAir(); break;
 	case PLAYERSTATE.Invincible: PlayerStateInvincible(); break;
 	case PLAYERSTATE.Armored: PlayerStateArmored(); break;
-	case PLAYERSTATE.Dashing: PlayerStateDash(); break;
+	//case PLAYERSTATE.Dashing: PlayerStateDash(); break;
 }
 
 
@@ -60,20 +69,22 @@ switch (state){
   //then injected into the PlayerStateAttacking function eg: move mediumPunch = new objMove {fields}
   if (keyMediumPunch){	  
 	  //var test = mediumHit.characterSprite;
+	  activeMove = mediumHit;
 	  state = PLAYERSTATE.Attacking;
-	var lockedFrames = mediumHit.activeFrames + mediumHit.startupFrames + mediumHit.recoveryFrames;
-	PlayerStateAttacking(mediumHit);
-	if (state = PLAYERSTATE.Attacking){
-		lockedFrames--;
-		sprite_index = spFanThrow;	
-		if(lockedFrames <= 0){
-			state = PLAYERSTATE.Neutral;
-			sprite_index = spIdle1;
-		}
-	}
+	  
+	//var lockedFrames = mediumHit.activeFrames + mediumHit.startupFrames + mediumHit.recoveryFrames;
+	//PlayerStateAttacking(mediumHit);
+	//if (state = PLAYERSTATE.Attacking){
+	//	lockedFrames--;
+	//	sprite_index = spFanThrow;	
+	//	if(lockedFrames <= 0){
+	//		state = PLAYERSTATE.Neutral;
+	//		//sprite_index = spIdle1;
+	//	}
+	//}
   }
   
- 
+ //state seems to be resetting every step
 
 //if(inMove){
 //	sprite_index = actingMove.characterSprite;

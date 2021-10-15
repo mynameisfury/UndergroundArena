@@ -8,7 +8,8 @@ function objMove(startupFrames,activeFrames,recoveryFrames,hitStun,blockStun,dam
 	self.damage = damage;
 	self.isCancelable = isCancelable;
 	self.hitboxSprite = hitboxSprite;
-	self.characterSprite = characterSprite;	
+	self.characterSprite = characterSprite;
+	
 	
 	ThrowMove = function(x,y){
 		var hitBox = instance_create_layer(x,y, "Hitboxes", objHitbox);
@@ -18,3 +19,5 @@ function objMove(startupFrames,activeFrames,recoveryFrames,hitStun,blockStun,dam
 		}
 	}
 }
+
+
