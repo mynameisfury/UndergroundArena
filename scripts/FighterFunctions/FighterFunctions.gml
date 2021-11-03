@@ -87,7 +87,7 @@ function PlayerStateBlockstun(){
 /// @param {objMove}  attack  The attack to be done
 /// @description              Dictates player behavior during the attacking state
 function PlayerStateAttacking(attack){
-	state = PLAYERSTATE.Attacking;
+	
 	attack.ThrowMove(x,y);
 	
 	

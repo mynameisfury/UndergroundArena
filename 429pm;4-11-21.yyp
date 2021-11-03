@@ -19,6 +19,7 @@
     {"id":{"name":"Sprite2","path":"sprites/Sprite2/Sprite2.yy",},"order":1,},
     {"id":{"name":"mediumPunch","path":"objects/mediumPunch/mediumPunch.yy",},"order":0,},
     {"id":{"name":"spBoundary","path":"sprites/spBoundary/spBoundary.yy",},"order":0,},
+    {"id":{"name":"HelperFunctions","path":"scripts/HelperFunctions/HelperFunctions.yy",},"order":2,},
     {"id":{"name":"spCrouch","path":"sprites/spCrouch/spCrouch.yy",},"order":2,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],

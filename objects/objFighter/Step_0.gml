@@ -30,6 +30,9 @@ switch (state){
 		if(hsp != 0){
 			sprite_index = spLightPunch;				
 		}
+		if(!onGround){
+				
+		}
 		if (crouched){
 		sprite_index = spCrouch;
 		hsp = 0;
@@ -37,11 +40,21 @@ switch (state){
 	break;
 	
 	case PLAYERSTATE.Attacking:		
-		var remainingFrames = activeMove.startupFrames + activeMove.activeFrames + activeMove.recoveryFrames
+	
+		PlayerStateAttacking(activeMove);
+		//var remainingFrames = activeMove.startupFrames + activeMove.activeFrames + activeMove.recoveryFrames
 		
 		sprite_index = activeMove.characterSprite;
+		//remainingFrames--;
+		
+		////state = PLAYERSTATE.Neutral;
+		//if (remainingFrames == 0){
 			
-		alarm[1] = remainingFrames;
+		//state = PLAYERSTATE.Neutral;	
+		//}
+		
+			
+		//alarm[1] = remainingFrames;
 			
 			
 	break;
