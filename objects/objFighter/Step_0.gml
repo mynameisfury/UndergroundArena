@@ -18,8 +18,8 @@ else
 	keyLeft = 0;
 	keyDown = 0;
 }
-//var activeMove;
-//var totalFrames = activeMove.startupFrames + activeMove.activeFrames + activeMove.recoveryFrames;
+
+
 switch (state){
 	case PLAYERSTATE.Neutral: 
 		PlayerStateNeutral(); 
@@ -45,6 +45,14 @@ switch (state){
 		//var remainingFrames = activeMove.startupFrames + activeMove.activeFrames + activeMove.recoveryFrames
 		
 		sprite_index = activeMove.characterSprite;
+		if(activeMove != undefined){;
+		var totalFrames = activeMove.startupFrames + activeMove.activeFrames + activeMove.recoveryFrames;
+		if(totalFrames <= 0){
+			state = PLAYERSTATE.Neutral;	
+			}
+
+		}
+		totalFrames--;
 		//remainingFrames--;
 		
 		////state = PLAYERSTATE.Neutral;
