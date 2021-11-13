@@ -42,14 +42,12 @@ switch (state){
 	case PLAYERSTATE.Attacking:		
 	
 		PlayerStateAttacking(activeMove);
-		//var remainingFrames = activeMove.startupFrames + activeMove.activeFrames + activeMove.recoveryFrames
-		
 		sprite_index = activeMove.characterSprite;
-		if(activeMove != undefined){;
-		var totalFrames = activeMove.startupFrames + activeMove.activeFrames + activeMove.recoveryFrames;
-		if(totalFrames <= 0){
-			state = PLAYERSTATE.Neutral;	
-			}
+		if(activeMove != undefined){
+			if(totalFrames <= 0){
+				state = PLAYERSTATE.Neutral;
+				activeMove = undefined;
+				}
 
 		}
 		totalFrames--;
@@ -78,48 +76,21 @@ switch (state){
 }
 
 
-//var move = keyRight - keyLeft;
-//  	if(keyboard_check_pressed(vk_space)){
-//		var fanThrow = new objMove(){
-//		characterSprite = spBoundary;	
-//		}
-//		actingMove = fanThrow;
-//		inMove = true;
-//	}
+
   //moves should inherit their fields from the objMove model and be constructed in the character code and 
   //then injected into the PlayerStateAttacking function eg: move mediumPunch = new objMove {fields}
-  if (keyMediumPunch){	  
-	  //var test = mediumHit.characterSprite;
-	  activeMove = mediumHit;
-	  state = PLAYERSTATE.Attacking;
-	  
-	//var lockedFrames = mediumHit.activeFrames + mediumHit.startupFrames + mediumHit.recoveryFrames;
-	//PlayerStateAttacking(mediumHit);
-	//if (state = PLAYERSTATE.Attacking){
-	//	lockedFrames--;
-	//	sprite_index = spFanThrow;	
-	//	if(lockedFrames <= 0){
-	//		state = PLAYERSTATE.Neutral;
-	//		//sprite_index = spIdle1;
-	//	}
-	//}
+  if (keyMediumPunch){
+	//instance_create_layer(x,y, "Hitboxes", objHitbox);
+	activeMove = mediumHit;
+	mediumHit.currentFrame = 0;
+	totalFrames = activeMove.startupFrames + activeMove.activeFrames + activeMove.recoveryFrames;
+	state = PLAYERSTATE.Attacking;
   }
   
- //state seems to be resetting every step
-
-//if(inMove){
-//	sprite_index = actingMove.characterSprite;
-//	for (i=0; i < actingMove.characterSprite.image_number; i++){
-//		hasControl = false;
-//		}
-//	 var hitbox = new objHitbox();
-//	  with (hitbox){
-//		  sprite_index = spLightPunchHitbox;
-//	  }
-//	  instance_create_layer(x,y, "Hitboxes", hitbox); 
-//}
-
-
+if(keyboard_check(vk_lshift)){
+	instance_create_layer(x,y, "Hitboxes", objHitbox);	
+	
+}
 
 // Inherit the parent event
 event_inherited();

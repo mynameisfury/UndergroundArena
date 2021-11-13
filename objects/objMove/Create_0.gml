@@ -9,6 +9,7 @@ function objMove(startupFrames,activeFrames,recoveryFrames,hitStun,blockStun,dam
 	self.isCancelable = isCancelable;
 	self.hitboxSprite = hitboxSprite;
 	self.characterSprite = characterSprite;
+	self.currentFrame = 0;
 	
 	
 	ThrowMove = function(x,y){

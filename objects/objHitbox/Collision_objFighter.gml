@@ -2,7 +2,8 @@
 // You can write your code in this editor
 with(other)
 {
-	direction = other.direction;
-	
+	direction = other.direction;	
 }
-instance_destroy();
+if (objFighter.playerId != playerId){
+	instance_destroy();
+}

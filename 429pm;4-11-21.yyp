@@ -15,6 +15,7 @@
     {"id":{"name":"spLightPunchHitbox","path":"sprites/spLightPunchHitbox/spLightPunchHitbox.yy",},"order":0,},
     {"id":{"name":"objHurtbox","path":"objects/objHurtbox/objHurtbox.yy",},"order":6,},
     {"id":{"name":"spIdle1","path":"sprites/spIdle1/spIdle1.yy",},"order":1,},
+    {"id":{"name":"spLightPunchHitbox2","path":"sprites/spLightPunchHitbox2/spLightPunchHitbox2.yy",},"order":1,},
     {"id":{"name":"spLightPunch","path":"sprites/spLightPunch/spLightPunch.yy",},"order":3,},
     {"id":{"name":"Sprite2","path":"sprites/Sprite2/Sprite2.yy",},"order":1,},
     {"id":{"name":"mediumPunch","path":"objects/mediumPunch/mediumPunch.yy",},"order":0,},
@@ -59,6 +60,7 @@
     {"folderPath":"folders/Sprites/bases.yy","order":6,"resourceVersion":"1.0","name":"bases","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/fighterSprites.yy","order":7,"resourceVersion":"1.0","name":"fighterSprites","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/fighterSprites/hitboxes.yy","order":4,"resourceVersion":"1.0","name":"hitboxes","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Characters.yy","order":14,"resourceVersion":"1.0","name":"Characters","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
@@ -68,7 +70,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.5.589",
+    "IDEVersion": "2.3.6.595",
   },
   "resourceVersion": "1.4",
   "name": "429pm;4-11-21",

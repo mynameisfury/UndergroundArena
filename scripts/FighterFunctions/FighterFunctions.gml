@@ -87,23 +87,28 @@ function PlayerStateBlockstun(){
 /// @param {objMove}  attack  The attack to be done
 /// @description              Dictates player behavior during the attacking state
 function PlayerStateAttacking(attack){
+	var hitboxCreated = [];
+	attack.currentFrame++;
+	//if hitbox created == empty - then create hitbox
 	
-	attack.ThrowMove(x,y);
+	if(attack.currentFrame >= attack.startupFrames){		
+		var hitbox = instance_create_layer(x,y, "Hitboxes", objHitbox);
+		hitbox.sprite_index = attack.hitboxSprite;
+		with(hitbox){
+			alarm[0] = attack.activeFrames;
+		}
+		
+		var destroy = attack.startupFrames + attack.activeFrames;
+		if(hitbox != undefined){
+			if(attack.currentFrame == destroy){
+				with(hitbox){
+					instance_destroy();
+				}
+			}
+		}
+	}
 	
 	
-	//var hitbox = new objHitbox(attack.hitboxSprite);
-	//instance_create_layer(x,y, "Hitboxes", hitbox); 
-	
-	//hasControl = false;
-	//sprite_index = spFanThrow;
-	//var lockedFor = 0;
-	//lockedFor += spFanThrow.image_number;
-	//lockedFor--;
-	
-	//if(lockedFor = 0){
-	//	hasControl = true;
-	//	PLAYERSTATE = PlayerStateNeutral();
-	//}
 }
 function PlayerStateBlocking(){
 
