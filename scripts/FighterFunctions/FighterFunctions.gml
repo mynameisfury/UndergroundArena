@@ -35,15 +35,15 @@ if (onGround){
 	}
 	else if (keyUp){
 		vsp = -jumpSpd;
-		}
+	}
 		
 	if(keyboard_check_pressed(vk_right)){
 		if(ableToDash){
 			PlayerStateDash(true);
-		}
-	  else{
-	    ableToDash = true
-	    alarm[0] = 10
+	}
+	else{
+	  ableToDash = true
+	  alarm[0] = 10
 	  }
 	
 	}
@@ -91,7 +91,10 @@ function PlayerStateAttacking(attack){
 	attack.currentFrame++;
 	//if hitbox created == empty - then create hitbox
 	
-	if(attack.currentFrame >= attack.startupFrames){		
+	if(attack.currentFrame >= attack.startupFrames){	
+		if(hitboxCreated.length > 0){
+				
+		}
 		var hitbox = instance_create_layer(x,y, "Hitboxes", objHitbox);
 		hitbox.sprite_index = attack.hitboxSprite;
 		with(hitbox){
