@@ -87,14 +87,14 @@ function PlayerStateBlockstun(){
 /// @param {objMove}  attack  The attack to be done
 /// @description              Dictates player behavior during the attacking state
 function PlayerStateAttacking(attack){
-	var hitboxCreated = [];
+//	var hitboxCreated = [];
 	attack.currentFrame++;
 	//if hitbox created == empty - then create hitbox
 	
 	if(attack.currentFrame >= attack.startupFrames){	
-		if(hitboxCreated.length > 0){
+		//if(hitboxCreated.length > 0){
 				
-		}
+		//}
 		var hitbox = instance_create_layer(x,y, "Hitboxes", objHitbox);
 		hitbox.sprite_index = attack.hitboxSprite;
 		with(hitbox){

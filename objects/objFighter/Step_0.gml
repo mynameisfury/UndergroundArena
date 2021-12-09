@@ -28,7 +28,7 @@ switch (state){
 			sprite_index = spIdle1;	
 		}
 		if(hsp != 0){
-			sprite_index = spLightPunch;				
+		//	sprite_index = spLightPunch;				
 		}
 		if(!onGround){
 				

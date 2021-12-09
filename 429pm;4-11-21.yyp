@@ -14,6 +14,7 @@
     {"id":{"name":"objBoundary","path":"objects/objBoundary/objBoundary.yy",},"order":2,},
     {"id":{"name":"spLightPunchHitbox","path":"sprites/spLightPunchHitbox/spLightPunchHitbox.yy",},"order":0,},
     {"id":{"name":"objHurtbox","path":"objects/objHurtbox/objHurtbox.yy",},"order":6,},
+    {"id":{"name":"Sprite12","path":"sprites/Sprite12/Sprite12.yy",},"order":6,},
     {"id":{"name":"spIdle1","path":"sprites/spIdle1/spIdle1.yy",},"order":1,},
     {"id":{"name":"spLightPunchHitbox2","path":"sprites/spLightPunchHitbox2/spLightPunchHitbox2.yy",},"order":1,},
     {"id":{"name":"spLightPunch","path":"sprites/spLightPunch/spLightPunch.yy",},"order":3,},
@@ -70,7 +71,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.6.595",
+    "IDEVersion": "2.3.5.589",
   },
   "resourceVersion": "1.4",
   "name": "429pm;4-11-21",
