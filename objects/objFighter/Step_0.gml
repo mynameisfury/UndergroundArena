@@ -19,6 +19,7 @@ else
 	keyDown = 0;
 }
 
+var movesPressed = [];
 
 switch (state){
 	case PLAYERSTATE.Neutral: 
@@ -41,28 +42,16 @@ switch (state){
 	
 	case PLAYERSTATE.Attacking:		
 	
-		PlayerStateAttacking(activeMove);
+		
 		sprite_index = activeMove.characterSprite;
 		if(activeMove != undefined){
 			if(totalFrames <= 0){
 				state = PLAYERSTATE.Neutral;
 				activeMove = undefined;
-				}
-
+			}
 		}
 		totalFrames--;
-		//remainingFrames--;
-		
-		////state = PLAYERSTATE.Neutral;
-		//if (remainingFrames == 0){
-			
-		//state = PLAYERSTATE.Neutral;	
-		//}
-		
-			
-		//alarm[1] = remainingFrames;
-			
-			
+				
 	break;
 	
 	
@@ -77,14 +66,33 @@ switch (state){
 
 
 
+if (keyDown){
+	
+		}
+
+	if (upRight){
+		vsp = -jumpSpd;
+		while(!onGround){
+			move = -1;		
+			}
+		}
+	if (upLeft){
+		vsp = -jumpSpd;
+		while(!onGround){
+				move = -1;		
+			}
+	}
+
   //moves should inherit their fields from the objMove model and be constructed in the character code and 
   //then injected into the PlayerStateAttacking function eg: move mediumPunch = new objMove {fields}
   if (keyMediumPunch){
 	//instance_create_layer(x,y, "Hitboxes", objHitbox);
+	hsp = 0;
 	activeMove = mediumHit;
-	mediumHit.currentFrame = 0;
+	activeMove.currentFrame = 0;
 	totalFrames = activeMove.startupFrames + activeMove.activeFrames + activeMove.recoveryFrames;
 	state = PLAYERSTATE.Attacking;
+	PlayerStateAttacking(activeMove);
   }
   
 if(keyboard_check(vk_lshift)){
