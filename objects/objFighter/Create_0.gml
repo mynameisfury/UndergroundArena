@@ -9,6 +9,11 @@ enum PLAYERSTATE{
 	Armored,
 	Dashing
 }
+enum FACING{
+	left,
+	right
+};
+
 state = PLAYERSTATE.Neutral;
 
 activeMove = undefined;

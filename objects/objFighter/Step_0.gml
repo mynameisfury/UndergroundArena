@@ -20,11 +20,20 @@ else
 }
 
 var movesPressed = [];
+var opponent;
+
+if (opponent.x > x){
+	facing = left;	
+	
+}
+
 
 switch (state){
 	case PLAYERSTATE.Neutral: 
 		PlayerStateNeutral(); 
-		if(hsp !=0) image_xscale = sign(hsp);
+		if(hsp !=0) {
+			image_xscale = sign(hsp)
+		};
 		if(hsp == 0){
 			sprite_index = spIdle1;	
 		}
